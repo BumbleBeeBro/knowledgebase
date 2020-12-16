@@ -1,0 +1,32 @@
+/driverknowledgebase/mvnw
+/driverknowledgebase/mvnw.cmd
+/driverknowledgebase/src/main/resources/static/paper/*
+/driverknowledgebase/src/main/resources/static/codebooks/*
+/driverknowledgebase/.vscode
+/driverknowledgebase/target/
+/.vscode
+/driverknowledgebase/src/main/resources/application.properties
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/

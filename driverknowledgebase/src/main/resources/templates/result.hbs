@@ -1,0 +1,96 @@
+{{#partial "content"}}
+<div class="row">
+
+    <div class="col-lg-3">
+        <section class="section-preview">
+            <h1 class="my-4">Keywords</h1>
+            {{#each keywords}}
+            <a class="text-dark" href="/search/?searchString={{this}}"><span class="badge badge-secondary ml-2">{{this}}</span></a>
+            {{/each}}
+
+        </section>
+    </div>
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-9">
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4 class="h4"><a class="text-warning" href="/results/{{paper.id}}">{{paper.title}}</a></h4>
+                <h5>
+                {{#each paper.authorPapers}}
+                <a class="text-dark" href="/results/authors/{{authors.id}}">{{authors.name}}</a>;
+                {{/each}}
+                </h5>
+                <h6>{{paper.keywords}}</h6>
+                <p class="text-justify">
+                    {{paper.paperAbstract}}
+                </p>
+                <hr>
+                <form action="/change_codebook/{{paper.id}}" method="POST">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Comment</label>
+                        <textarea class="form-control" name="comment" rows="6">{{paper.comment}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Objectives</label>
+                        <textarea class="form-control" name="objectives" rows="6">{{paper.objectives}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Research Questions</label>
+                        <textarea class="form-control" name="researchQuestions" rows="6">{{paper.researchQuestions}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Experiment Planning and Deviations</label>
+                        <textarea class="form-control" name="experimentPlanningAndDeviations" rows="6">{{paper.experimentPlanningAndDeviations}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Research Methods</label>
+                        <textarea class="form-control" name="researchMethods" rows="6">{{paper.researchMethods}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Metrics and KPIs</label>
+                        <textarea class="form-control" name="metricsAndKPIs" rows="6">{{paper.metricsAndKPIs}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Data Collection Plan</label>
+                        <textarea class="form-control" name="dataCollectionPlan" rows="6">{{paper.dataCollectionPlan}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Data Analysis</label>
+                        <textarea class="form-control" name="dataAnalysis" rows="6">{{paper.dataAnalysis}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Ethical Procedures</label>
+                        <textarea class="form-control" name="ethicalProcedures" rows="6">{{paper.ethicalProcedures}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Results</label>
+                        <textarea class="form-control" name="results" rows="6">{{paper.results}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Methodological Lessons Learned</label>
+                        <textarea class="form-control" name="methodologicalLL" rows="6">{{paper.methodologicalLL}}</textarea>
+                    </div>
+                    <div class="text-center form-group">
+                    <input type="submit" class="btn btn-secondary" value="Submit">
+                    </div>
+                </form>
+                <div class="text-center">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-outline-secondary" href="{{paper.onlineLink}}" target="blank">Link to the
+                            paper</a>
+                        <a class="btn btn-outline-secondary" href="{{paper.pdfLink}}" target="blank">PDF</a>
+                        <a class="btn btn-outline-secondary" href="{{paper.codebookLink}}" target="blank">Codebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.card -->
+
+    </div>
+    <!-- /.col-lg-9 -->
+
+
+    {{/partial}}
+
+    {{> base}}

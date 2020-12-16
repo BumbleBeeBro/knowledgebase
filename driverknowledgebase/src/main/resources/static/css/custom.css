@@ -1,0 +1,17 @@
+body { 
+    padding-top: 55px;
+}
+
+html,body{
+    height: 100%;
+}
+
+.container-padding {
+    padding-bottom: 15px;
+    min-height: 87%
+}
+.btn-group-wrap {
+    float: left;
+}
+
+
